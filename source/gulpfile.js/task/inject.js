@@ -3,35 +3,35 @@
 */
 module.exports = function (gulp, plugin, config) {
 
+    function inject( source, paths ) {
+        var sources = gulp.src( paths, { read: false } );
 
-    return function () {
-
-        var sourcesSCSS = gulp.src( [ 
-            config.client.glob.sass
-        ], { read: false } ); 
-
-        gulp.src( config.client.path.indexScss )
+        return gulp.src( source )
             .pipe( plugin.inject( 
-                sourcesSCSS, {
+                sources, {
                     ignorePath: 'src', 
                     addRootSlash: false
                 } ) )
             .pipe( gulp.dest( config.client.dir.src ) )
         ;
+    }
 
-        var sourcesJS = gulp.src( [
-            './src/app/**/*.module.js',
-            './src/app/**/*.!(module).js',
-            './src/app/**/*.js'
-        ], { read: false } ); 
+    return function() {
 
-        return gulp.src( config.client.path.indexHtml )
-            .pipe( plugin.inject( 
-                sourcesJS, {
-                    ignorePath: 'src', 
-                    addRootSlash: false
-                } ) )
-            .pipe( gulp.dest( config.client.dir.src ) )
-        ;
+        // inject all scss files in to index.style.scss
+        inject(
+            config.client.path.indexScss,
+            [ config.client.glob.sass ]
+        );
+
+        // inject all javascript files into index.html
+        return inject(
+            config.client.path.indexHtml,
+            [
+                './src/app/**/*.module.js',        // first all the module definitions
+                './src/app/**/*.!(module).js',     // after that all the module components
+                './src/app/**/*.js'                // after that all non-module files
+            ]
+        );
     };
 };

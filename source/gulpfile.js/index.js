@@ -12,6 +12,7 @@ var plugin = {
     pngquant:    require('imagemin-pngquant'),
     annotate:    require('gulp-ng-annotate'),
     minifyCss:   require('gulp-minify-css'),
+    sourcemaps:  require('gulp-sourcemaps'),
     sync:        require('gulp-sync')(gulp),
     wiredep:     require('wiredep').stream,
     imagemin:    require('gulp-imagemin'),

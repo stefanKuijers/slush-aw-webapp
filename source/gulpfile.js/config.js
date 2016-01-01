@@ -33,10 +33,11 @@ module.exports = function( gulp, plugin ) {
                 buildSrc:  root + component.build.root + '/src'
             },
             path: {
-                css:       root + '.tmp/css/style.css',
-                indexHtml: clientSrc + '/index.html',
-                indexScss: clientSrc + '/index.style.scss',
-                bower:     root + 'bower.json'
+                css:        root + '.tmp/css/style.css',
+                indexHtml:  clientSrc + '/index.html',
+                styleScss:  clientSrc + '/index.style.scss',
+                vendorScss: clientSrc + '/index.vendor.scss',
+                bower:      root + 'bower.json'
             },
             glob: {
                 buildDist: root + component.build.root + '/dist/**',
