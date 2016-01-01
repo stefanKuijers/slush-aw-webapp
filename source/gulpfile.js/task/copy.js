@@ -6,20 +6,30 @@ module.exports = function (gulp, plugin, config) {
 
     return function () {
 
-    	// copy css file
-    	// gulp.src( config.client.path.css )
-     //        .pipe( gulp.dest( config.client.dir.buildDist ) );
+        if ( config.component.build.production ) {
 
-        // copy bower file
-        gulp.src( config.client.path.bower )
-            .pipe( gulp.dest( config.client.dir.build ) );
+            // copy font files
+            gulp.src( plugin.mainBowerFiles( {
+                filter: '**/*.{eot,svg,ttf,woff,woff2}'
+            } ).concat( config.client.glob.fonts ) )
+                .pipe( plugin.plumber({ errorHandler: config.error.handler }) )
+                .pipe( gulp.dest( config.client.dir.buildDist + '/asset/fonts' ) );
+            
+        } else {
+            // copy css files
+            gulp.src( config.client.glob.css )
+              .pipe( gulp.dest( config.client.dir.build + '/css' ) );
+            
+            // all assets
+            gulp.src( config.client.glob.asset )
+              .pipe( gulp.dest( config.client.dir.build + '/asset' ) );
 
-        // copy font files
-        gulp.src( plugin.mainBowerFiles( {
-            filter: '**/*.{eot,svg,ttf,woff,woff2}'
-        } ).concat( config.client.glob.fonts ) )
-            .pipe( plugin.plumber({ errorHandler: config.error.handler }) )
-            .pipe( gulp.dest( config.client.dir.buildDist + '/asset/fonts' ) );
+            // templates
+            gulp.src( config.client.glob.template )
+              .pipe( gulp.dest( config.client.dir.build + '/app' ) );
+
+        }
+
 
         // copy dev index.html if not in production
         // if ( !config.component.build.production ) {
@@ -27,8 +37,12 @@ module.exports = function (gulp, plugin, config) {
         //         .pipe( gulp.dest( config.client.dir.build ) );
         // }
 
+        // copy bower file
+        gulp.src( config.client.path.bower )
+            .pipe( gulp.dest( config.client.dir.build ) );
+
         // copy src files
-        return gulp.src( config.client.glob.src )
+        gulp.src( config.client.glob.src )
             .pipe( gulp.dest( config.client.dir.buildSrc ) );
        
     };

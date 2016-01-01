@@ -3,19 +3,21 @@
 */
 module.exports = function (gulp, plugin, config) {
 
-
     return function () {
-
         var stream = gulp.src( config.client.path.indexHtml )
-            .pipe( plugin.useref() )
+            .pipe( plugin.useref( {
+               noconcat: !config.component.build.production
+            } ) )
             .pipe( plugin.if( '*.js', plugin.annotate() ) )
-            .pipe( plugin.if( '*.js', plugin.uglify() ) )
-            .pipe( plugin.if( '*.css', plugin.minifyCss() ) );
+        ;
 
-        // if ( config.component.build.production ) {
-            stream.pipe( gulp.dest( config.client.dir.build ) );
-        // }
+        if ( config.component.build.production ) {
+            stream
+                .pipe( plugin.if( '*.js', plugin.uglify() ) )
+                .pipe( plugin.if( '*.css', plugin.minifyCss() ) );
+        }
 
-        // return stream;
+        return stream
+            .pipe( gulp.dest( config.client.dir.build ) );
     };
 };

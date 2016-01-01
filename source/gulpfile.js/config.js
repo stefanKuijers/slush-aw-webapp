@@ -10,7 +10,7 @@ module.exports = function( gulp, plugin ) {
         name: 'app',
         build: {
             root: '/build/',
-            production: false
+            production: true
         }
     };
 
@@ -45,13 +45,15 @@ module.exports = function( gulp, plugin ) {
             },
             glob: {
                 buildDist: root + component.build.root + '/dist/**',
+                asset:     clientSrc + '/asset/**/*',
                 image:     clientSrc + '/asset/image/**',
                 fonts:     clientSrc + '/asset/fonts/**',
                 sass:      clientApp + '/**/*.scss',
                 js:        clientApp + '/**/*.js',
                 html:      clientSrc + '/**/*.html',
                 template:  clientApp + '/**/*.html',
-                src:       clientSrc + '/**/*'
+                src:       clientSrc + '/**/*',
+                css:       root + '.tmp/css/**/*.css'
             }
             
         },
