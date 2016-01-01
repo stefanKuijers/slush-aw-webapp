@@ -7,7 +7,7 @@ module.exports = function( gulp, plugin ) {
     var asset     = clientSrc + '/asset';
 
     var component = {
-        name: 'userStatistics',
+        name: 'app',
         build: {
             root: '/build/',
             production: false
@@ -45,7 +45,8 @@ module.exports = function( gulp, plugin ) {
             },
             glob: {
                 buildDist: root + component.build.root + '/dist/**',
-                image:     clientSrc + '/asset/**',
+                image:     clientSrc + '/asset/image/**',
+                fonts:     clientSrc + '/asset/fonts/**',
                 sass:      clientApp + '/**/*.scss',
                 js:        clientApp + '/**/*.js',
                 html:      clientSrc + '/**/*.html',
@@ -76,7 +77,6 @@ module.exports = function( gulp, plugin ) {
         html: getTask('html'),
         image: getTask('image'),
         inject: getTask('inject'),
-        rename: getTask('rename'),
         replace: getTask('replace'),
         sass: getTask('sass'),
         serve: getTask('serve'),

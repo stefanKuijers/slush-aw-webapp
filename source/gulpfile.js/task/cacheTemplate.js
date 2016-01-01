@@ -10,7 +10,16 @@ module.exports = function (gulp, plugin, config) {
 	            .pipe( plugin.cache( 'templates.js', {
 			    	transformUrl: function(url) {
 					    return 'app/' + url;
-					}
+					},
+                    htmlmin: {
+                        collapseBooleanAttributes:      true,
+                        collapseWhitespace:             true,
+                        removeAttributeQuotes:          true,
+                        removeEmptyAttributes:          true,
+                        removeRedundantAttributes:      true,
+                        removeScriptTypeAttributes:     true,
+                        removeStyleLinkTypeAttributes:  true
+                    }
 			    } ) );
     	}
 
@@ -24,6 +33,10 @@ module.exports = function (gulp, plugin, config) {
 			    // fix asset url
 			    .pipe( plugin.replace(
                     'src=\\"/asset/', 'src=\\"' + ( config.component.build.root || '' ) + 'dist/asset/'
+                ) )
+                // replace the urls of the assets
+                .pipe( plugin.replace(
+                    'asset/image/', 'dist/asset/image/'
                 ) )
 			    // concatenate the whole thing
 			    .pipe( plugin.concat( config.component.name + '.min.js' ) )

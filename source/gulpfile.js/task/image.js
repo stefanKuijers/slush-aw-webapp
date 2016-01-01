@@ -12,6 +12,6 @@ module.exports = function (gulp, plugin, config) {
 		            svgoPlugins: [ {removeViewBox: false} ],
 		            use: [ plugin.pngquant() ]
 		        } ) )
-            .pipe( gulp.dest( config.client.dir.buildDist + '/asset' ) );
+            .pipe( gulp.dest( config.client.dir.buildDist + '/asset/image' ) );
     };
 };

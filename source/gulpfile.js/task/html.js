@@ -12,9 +12,9 @@ module.exports = function (gulp, plugin, config) {
             .pipe( plugin.if( '*.js', plugin.uglify() ) )
             .pipe( plugin.if( '*.css', plugin.minifyCss() ) );
 
-        if ( config.component.build.production ) {
+        // if ( config.component.build.production ) {
             stream.pipe( gulp.dest( config.client.dir.build ) );
-        }
+        // }
 
         // return stream;
     };

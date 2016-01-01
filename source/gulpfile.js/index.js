@@ -3,6 +3,11 @@
     gulp index
 */ 'use strict';
 
+
+
+/*
+    Requires
+*/
 var gulp = require('gulp');
 
 var plugin = {
@@ -34,29 +39,51 @@ var plugin = {
 };
 
 var gulpsync = require('gulp-sync')(gulp);
-var config = require('./config.js')( gulp, plugin );
+var config   = require('./config.js')( gulp, plugin );
 
 
+
+/* 
+    Development
+*/
 gulp.task( 'inject',  config.task.inject  );
 gulp.task( 'wiredep', config.task.wiredep );
 gulp.task( 'sass',    config.task.sass    );
 gulp.task( 'font',    config.task.font    );
 
 gulp.task( 'serve', ['inject', 'sass'], config.task.serve );
-gulp.task( 'default', gulpsync.sync(['wiredep', 'font',  'serve']), config.task.watch );
+gulp.task( 
+    'default', 
+    gulpsync.sync( ['wiredep', 'font',  'serve'] ), 
+    config.task.watch 
+);
 
 
 
-gulp.task( 'html',           config.task.html );
-gulp.task( 'copy',           config.task.copy );
-gulp.task( 'serveBuild',     config.task.serveBuild );
-gulp.task( 'rename',         config.task.rename );
-gulp.task( 'replace',        config.task.replace );
-gulp.task( 'image',          config.task.image );
-gulp.task( 'cacheTemplate',  config.task.cacheTemplate );
+/*
+    Build
+*/
 gulp.task( 'clean',          config.task.clean );
 gulp.task( 'prepareBuild',   ['clean','inject', 'sass'] );
-gulp.task( 'setupBuild',     ['image', 'html', 'copy'] );
-gulp.task( 'renameBuild',    ['rename', 'replace'] );
 
-gulp.task( 'build', gulpsync.sync(['wiredep', 'font', 'prepareBuild', 'setupBuild', 'renameBuild', 'cacheTemplate', 'serveBuild']) );
+gulp.task( 'image',          config.task.image );
+gulp.task( 'html',           config.task.html );
+gulp.task( 'copy',           config.task.copy );
+gulp.task( 'setupBuild',     ['image', 'html', 'copy'] );
+
+gulp.task( 'replace',        config.task.replace );
+gulp.task( 'cacheTemplate',  config.task.cacheTemplate );
+gulp.task( 'serveBuild',     config.task.serveBuild );
+
+gulp.task( 
+    'build', 
+    gulpsync.sync( [
+        'wiredep', 
+        'font', 
+        'prepareBuild', 
+        'setupBuild', 
+        'replace', 
+        'cacheTemplate', 
+        'serveBuild'
+    ] ) 
+);
