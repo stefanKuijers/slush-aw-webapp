@@ -1,0 +1,12 @@
+./node_modules
+./temp
+*.log
+.idea
+./source
+./*.sublime-project
+./Gulpfile.js
+./.gulp/
+
+
+# don't ignore .npmignore files
+!.npmignore
