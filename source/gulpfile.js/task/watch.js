@@ -4,7 +4,10 @@ module.exports = function( gulp, plugin, config ) {
 
     return function() {
 
-        return plugin.watch( config.client.glob.src , function( e ) {
+        return plugin.watch( [
+            config.client.glob.src,
+            config.client.path.bower
+        ], function( e ) {
             var reloadDelay = 0;
 
             // console.log( e.event, e.extname );
@@ -12,6 +15,8 @@ module.exports = function( gulp, plugin, config ) {
                 config.task.inject();
                 reloadDelay = 750;
             }
+
+            // console.log( e.extname );
 
             switch( e.extname ) {
                 case '.scss': config.task.sass(); break;

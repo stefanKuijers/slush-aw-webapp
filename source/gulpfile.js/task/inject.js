@@ -20,7 +20,7 @@ module.exports = function (gulp, plugin, config) {
 
         // inject all scss files in to index.style.scss
         inject(
-            config.client.path.indexScss,
+            config.client.path.styleScss,
             [ config.client.glob.sass ]
         );
 
