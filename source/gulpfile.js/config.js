@@ -1,9 +1,10 @@
 
 
 module.exports = function( gulp, plugin ) {
-    var root = './';
+    var root      = './';
     var clientSrc = root + '/src';
     var clientApp = clientSrc + '/app';
+    var asset     = clientSrc + '/asset';
 
     var component = {
         name: 'userStatistics',
@@ -27,6 +28,9 @@ module.exports = function( gulp, plugin ) {
                 tpm:       root + '.tmp',
                 css:       root + '.tmp/css',
                 data:      root + 'data',
+                asset:     asset,
+                image:     asset + '/image',
+                fonts:     asset + '/fonts',
                 bower:     root + 'bower_components',
                 build:     root + component.build.root,
                 buildDist: root + component.build.root + '/dist',
@@ -65,22 +69,21 @@ module.exports = function( gulp, plugin ) {
     };
 
     config.task = {
+        cacheTemplate: getTask('cacheTemplate'),
+        clean: getTask('clean'),
+        copy: getTask('copy'),
+        font: getTask('font'),
+        html: getTask('html'),
+        image: getTask('image'),
         inject: getTask('inject'),
+        rename: getTask('rename'),
+        replace: getTask('replace'),
         sass: getTask('sass'),
         serve: getTask('serve'),
         serveBuild: getTask('serveBuild'),
         watch: getTask('watch'),
-        wiredep: getTask('wiredep'),
-        html: getTask('html'),
-        copy: getTask('copy'),
-        rename: getTask('rename'),
-        image: getTask('image'),
-        replace: getTask('replace'),
-        clean: getTask('clean'),
-        cacheTemplate: getTask('cacheTemplate')
+        wiredep: getTask('wiredep')
     };
-
-
 
     return config;
 };

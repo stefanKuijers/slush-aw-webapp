@@ -20,12 +20,20 @@
         <!-- This file should represent how someone can use your component. So which scripts to ref and what html is needed. -->
         <!-- Note that the final version of this will be in the build folder after you run: $ gulp build -->
         <section>
-            hello webapp workflow  
+            <span>
+                hello webapp workflow
+            </span>
+            <i class="fa fa-circle-o"></i>
+            <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+            </button>
         </section>
 
 
         <!-- build:js vendor.min.js -->
         <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

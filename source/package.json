@@ -27,6 +27,7 @@
     "gulp-useref": "^3.0.3",
     "gulp-watch": "^4.3.5",
     "imagemin-pngquant": "^4.2.0",
+    "main-bower-files": "^2.11.0",
     "path": "^0.12.7",
     "wiredep": "^3.0.0-beta"
   }
