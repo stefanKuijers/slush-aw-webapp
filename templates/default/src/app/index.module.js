@@ -1,5 +1,5 @@
 /*
-    module: aw.webapp
+    module: <%= mainComponentName %>
 */
 
 (function() {
@@ -10,7 +10,7 @@
 
     angular
         .module(
-            'aw.webapp', 
+            '<%= mainComponentName %>', 
             [
                 'templates',
 

@@ -29,7 +29,8 @@ module.exports = function( gulp, plugins ) {
             },
             glob: {
                 templates: './templates/default/**/*',
-                gulpFiles: './templates/default/gulpfile.js/**/*'
+                gulpFiles: './templates/default/gulpfile.js/**/*',
+                src:       './templates/default/src/**/*'
             }
         }
     };

@@ -1,12 +1,12 @@
 /*
-   Config: aw.webapp
+   Config: <%= mainComponentName %>
 */
 
 (function() {
     'use strict';
 
     angular
-        .module( 'aw.webapp' )
+        .module( '<%= mainComponentName %>' )
         .config( config )
         .constant( 
             'CONSTANT_KEY', {

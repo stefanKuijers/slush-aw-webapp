@@ -38,8 +38,16 @@ module.exports = function (gulp, plugin, config) {
             ) )
 
             // change component name
+            .pipe( plugin.replace( 
+                'aw.webapp', 
+                '<%= mainComponentName %>' 
+            ) )
 
-            // change class
+            // change component name
+            .pipe( plugin.replace( 
+                'webapp-title', 
+                '<%= appNameSlug %>' 
+            ) )
 
             .pipe( gulp.dest( config.destination.dir.src ) );
     };

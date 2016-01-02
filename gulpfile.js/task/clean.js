@@ -4,6 +4,9 @@
 module.exports = function (gulp, plugin, config) {
 
     return function () {
-        return plugin.del( config.destination.glob.gulpFiles );
+        return plugin.del( [
+            config.destination.glob.gulpFiles,
+            config.destination.glob.src,
+        ] );
     };
 };
