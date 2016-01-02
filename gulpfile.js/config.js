@@ -7,7 +7,11 @@ module.exports = function( gulp, plugins ) {
         },
         source: {
             glob: {
-                gulpFiles: './source/gulpfile.js/**/*'
+                gulpFiles: './source/gulpfile.js/**/*',
+                srcFiles: [
+                    '!./source/src/app/index.route.js',
+                    './source/src/**/index*.*'
+                ]
             },
             path: {
                 package: './source/package.json',
@@ -19,8 +23,9 @@ module.exports = function( gulp, plugins ) {
         },
         destination: {
             dir: {
-                gulpfile: './templates/default/gulpfile.js/',
-                templates: './templates/default/'
+                gulpfile:  './templates/default/gulpfile.js/',
+                templates: './templates/default/',
+                src:       './templates/default/src'
             },
             glob: {
                 templates: './templates/default/**/*',

@@ -31,6 +31,7 @@ function getTask(task) {
 /* building tasks */
 gulp.task('clean',         getTask('clean'));
 gulp.task('copy',          getTask('copy'));
+gulp.task('templating',    getTask('templating'));
 // gulp.task('rename',        getTask('rename'));
 // gulp.task('default',[
 //     'clean',

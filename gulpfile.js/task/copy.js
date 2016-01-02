@@ -10,12 +10,19 @@ module.exports = function (gulp, plugin, config) {
         gulp.src( config.source.glob.gulpFiles )
             .pipe( gulp.dest( config.destination.dir.gulpfile ) );
 
-        // get package.json
-        gulp.src( config.source.path.package )
+        // get package.json and the readme
+        gulp.src( [
+            config.source.path.package,
+            config.source.path.readme,
+        ] )
             .pipe( gulp.dest( config.destination.dir.templates ) );
 
-        // gulp.src( config.source.glob.gulpFiles )
-        //     .pipe( gulp.dest( config.destination.dir.gulpfile ) );
-       
+        // copy source/src files
+        // gulp.src( [
+        //     config.source.path.package,
+        //     config.source.path.readme,
+        // ] )
+        //     .pipe( gulp.dest( config.destination.dir.templates ) );
+        
     };
 };

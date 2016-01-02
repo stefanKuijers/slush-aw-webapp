@@ -14,13 +14,7 @@
             [
                 'templates',
 
-                //clear
-                'ui.router',
-
-                'aw.webapp.directive',
-                'aw.webapp.pageOne',
-                'aw.webapp.pageTwo'
-                //clearEnd
+                
             ]
         );
 
