@@ -1,5 +1,5 @@
 {
-  "name": "slush-aw-webapp",
+  "name": "<%= mainComponentName %>",
   "version": "0.0.1",
   "description": "",
   "author": "",
