@@ -14,7 +14,7 @@ module.exports = function (gulp, plugin, config) {
         if ( config.component.build.production ) {
             stream
                 .pipe( plugin.if( '*.js', plugin.uglify() ) )
-                .pipe( plugin.if( '*.css', plugin.minifyCss() ) );
+                .pipe( plugin.if( '*.css', plugin.cssnano() ) );
         }
 
         return stream
