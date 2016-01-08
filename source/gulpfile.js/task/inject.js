@@ -12,7 +12,7 @@ module.exports = function (gulp, plugin, config) {
                     ignorePath: 'src', 
                     addRootSlash: false
                 } ) )
-            .pipe( gulp.dest( config.client.dir.src ) )
+            .pipe( gulp.dest( config.dir.src ) )
         ;
     }
 
@@ -20,13 +20,13 @@ module.exports = function (gulp, plugin, config) {
 
         // inject all scss files in to index.style.scss
         inject(
-            config.client.path.styleScss,
-            [ config.client.glob.sass ]
+            config.path.styleScss,
+            [ config.glob.sass ]
         );
 
         // inject all javascript files into index.html
         return inject(
-            config.client.path.indexHtml,
+            config.path.indexHtml,
             [
                 './src/app/**/*.module.js',        // first all the module definitions
                 './src/app/**/*.!(module).js',     // after that all the module components

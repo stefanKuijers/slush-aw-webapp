@@ -3,18 +3,20 @@
 module.exports = function( gulp, plugin ) {
     var defaults = require('./config.defaults.json');
     var userConfig = require('../gulp.config.json');
+
+    var _config = plugin.extend( true, defaults, userConfig );
     // var root       = './';
     // var clientSrc  = root + '/src';
     // var clientApp  = clientSrc + '/app';
     // var asset      = clientSrc + '/asset';
 
-    console.log( userConfig.name || defaults.name );
+    console.log( _config );
 
     var component = {
-        name: userConfig.name || defaults.name,
+        name: _config.name,
         build: {
-            root: userConfig.build.root || defaults.build.root,
-            production: userConfig.build.production || defaults.build.production
+            root: _config.build.root,
+            production: _config.build.production
         }
     };
 
@@ -25,41 +27,44 @@ module.exports = function( gulp, plugin ) {
 
     var config = {
         component: component,
-        client: {
-            dir: {
-                src:       userConfig.dir.src || defaults.dir.src,
-                app:       userConfig.dir.app || defaults.dir.app,
-                tpm:       userConfig.dir.tmp || defaults.dir.tmp,
-                css:       userConfig.dir.css || defaults.dir.css,
-                data:      userConfig.dir.data || defaults.dir.data,
-                asset:     userConfig.dir.asset || defaults.dir.asset,
-                image:     userConfig.dir.image || defaults.dir.image,
-                fonts:     userConfig.dir.fonts || defaults.dir.fonts,
-                bower:     userConfig.dir.bower_components || defaults.dir.bower_components,
-                build:     userConfig.dir.build.root || defaults.dir.build.root,
-                buildDist: userConfig.dir.build.dist || defaults.dir.build.dist,
-                buildSrc:  userConfig.dir.build.src || defaults.dir.build.src
-            },
-            path: {
-                // can be deleted?
-                css:        root + '.tmp/css/style.css',
-                indexHtml:  userConfig.path.indexHtml || defaults.path.indexHtml,
-                styleScss:  userConfig.path.styleScss || defaults.path.styleScss,
-                vendorScss: userConfig.path.vendorScss || defaults.path.vendorScss,
-                bower:      userConfig.path.bower || defaults.path.bower
-            },
-            glob: {
-                buildDist: userConfig.glob.buildDist || defaults.glob.buildDist,
-                asset:     userConfig.glob.asset || defaults.glob.asset,
-                image:     userConfig.glob.image || defaults.glob.image,
-                fonts:     userConfig.glob.fonts || defaults.glob.fonts,
-                sass:      userConfig.glob.sass || defaults.glob.sass,
-                js:        userConfig.glob.js || defaults.glob.js,
-                html:      userConfig.glob.html || defaults.glob.html,
-                template:  userConfig.glob.template || defaults.glob.template,
-                src:       userConfig.glob.src || defaults.glob.src,
-                css:       userConfig.glob.css || defaults.glob.css
-            }
+        dir: {
+            src:       _config.dir.src,
+            app:       _config.dir.app,
+            tpm:       _config.dir.tmp,
+            css:       _config.dir.css,
+            data:      _config.dir.data,
+            asset:     _config.dir.asset,
+            image:     _config.dir.image,
+            fonts:     _config.dir.fonts,
+            bower:     _config.dir.bower_components,
+            build:     _config.dir.build.root,
+            buildDist: _config.dir.build.dist,
+            buildSrc:  _config.dir.build.src
+        },
+        path: {
+            // can be deleted?
+            css:                root + '.tmp/css/style.css',
+            indexHtml:          _config.path.indexHtml,
+            styleScss:          _config.path.styleScss,
+            vendorScss:         _config.path.vendorScss,
+            bower:              _config.path.bower
+        },
+        glob: {
+            buildDist: _config.glob.buildDist,
+            asset:     _config.glob.asset,
+            image:     _config.glob.image,
+            fonts:     _config.glob.fonts,
+            sass:      _config.glob.sass,
+            js:        _config.glob.js,
+            html:      _config.glob.html,
+            template:  _config.glob.template,
+            src:       _config.glob.src,
+            css:       _config.glob.css
+            
+        },
+        templatecache: {
+            file: _config.templatecache.file,
+            pathCorrection: _config.templatecache.pathCorrection
         },
         error: {
             params: {

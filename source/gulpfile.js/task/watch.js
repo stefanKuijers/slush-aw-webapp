@@ -5,8 +5,8 @@ module.exports = function( gulp, plugin, config ) {
     return function() {
 
         return plugin.watch( [
-            config.client.glob.src,
-            config.client.path.bower
+            config.glob.src,
+            config.path.bower
         ], function( e ) {
             var reloadDelay = 0;
 

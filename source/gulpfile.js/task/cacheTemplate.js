@@ -6,10 +6,10 @@ module.exports = function (gulp, plugin, config) {
 
     return function () {
     	function getTemplateCache() {
-	        return gulp.src( config.client.glob.template )
-	            .pipe( plugin.cache( 'templates.js', {
+	        return gulp.src( config.glob.template )
+	            .pipe( plugin.cache( config.templatecache.file, {
 			    	transformUrl: function(url) {
-					    return 'app/' + url;
+					    return config.templatecache.pathCorrection + url;
 					},
                     htmlmin: {
                         collapseBooleanAttributes:      true,
@@ -27,7 +27,7 @@ module.exports = function (gulp, plugin, config) {
 
     	function cacheTemplate() {
             if ( config.component.build.production ) {
-    	    	return gulp.src( config.client.dir.buildDist + '/' + config.component.name + '.min.js' )
+    	    	return gulp.src( config.dir.buildDist + '/' + config.component.name + '.min.js' )
     	    		// add the templatecache to the stream
     			    .pipe( plugin.stream.obj( getTemplateCache( ) ) )
 
@@ -44,7 +44,7 @@ module.exports = function (gulp, plugin, config) {
     			    // concatenate the whole thing
     			    .pipe( plugin.concat( config.component.name + '.min.js' ) )
     			    // write it to the build
-    			    .pipe( gulp.dest( config.client.dir.buildDist ) );
+    			    .pipe( gulp.dest( config.dir.buildDist ) );
             } else {
                 return true;
             }

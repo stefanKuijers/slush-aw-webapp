@@ -34,6 +34,7 @@ var plugin = {
     watch:             require('gulp-watch'),
     sass:              require('gulp-sass'),
     if:                require('gulp-if'),
+    extend:            require('extend'),
     path:              require('path'),
     del:               require('del')
 };

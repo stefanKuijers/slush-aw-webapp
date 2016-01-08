@@ -8,6 +8,6 @@ module.exports = function (gulp, plugin, config) {
             'bower_components/bootstrap-sass/assets/fonts/bootstrap/*.{eot,svg,ttf,woff,woff2}',
         ] )
             .pipe( plugin.plumber( { errorHandler: config.error.handler } ) )
-            .pipe( gulp.dest( config.client.dir.fonts ) );
+            .pipe( gulp.dest( config.dir.fonts ) );
     };
 };

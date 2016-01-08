@@ -14,13 +14,13 @@ module.exports = function (gulp, plugin, config) {
             if ( config.component.build.production ) {
                 // fix asset file paths
                 gulp.src( [
-                    config.client.dir.build + '/**/*.{css,html}'
+                    config.dir.build + '/**/*.{css,html}'
                 ] )
                     .pipe( plugin.replace(
                         '/asset/', '/dist/asset/'
                         // '/asset/', ( config.component.build.root || '' ) + 'dist/asset/'
                     ) )
-                    .pipe( gulp.dest( config.client.dir.build + '/' ) )
+                    .pipe( gulp.dest( config.dir.build + '/' ) )
                 ;
             }
     	}
