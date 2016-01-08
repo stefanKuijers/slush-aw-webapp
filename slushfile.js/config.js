@@ -10,6 +10,7 @@ module.exports = function( gulp, plugins ) {
             allSourceFilesGlob: root + '/**/*',
             gulpfiles: root + '/gulpfile.js/**/*',
             destinationGlob: './',
+            packageJson: root + '/package.json',
             error: {
                 params: {
                     title:    'Gulp',

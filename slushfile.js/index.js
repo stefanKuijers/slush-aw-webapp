@@ -24,3 +24,8 @@ gulp.task(
     'default',    
     require( './default' )(gulp, plugin, config) 
 );
+
+gulp.task(
+    'update',    
+    require( './update' )(gulp, plugin, config) 
+);

@@ -1,10 +1,18 @@
 
 
 module.exports = function( gulp, plugin ) {
+    var userConfig;
+    console.log('Trying to load \'gulp.config.json\'\nCreate a config file if you need to overwrite the settings in gulpfile.js/config.defaults.json ');
+    try {
+        userConfig = require('./config.defaults.json');
+    } catch (e) {
+        userConfig = {};
+    }
+
     var _config = plugin.extend( 
         true, 
         require('./config.defaults.json'), 
-        require('../gulp.config.json')
+        userConfig
     );
 
     function getTask( name ) {
