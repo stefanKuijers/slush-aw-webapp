@@ -11,16 +11,17 @@ module.exports = function (gulp, plugin, config) {
 
     	function replace() {
 
-            if ( config.component.build.production ) {
+            if ( config.build.production ) {
                 // fix asset file paths
-                gulp.src( [
-                    config.dir.build + '/**/*.{css,html}'
-                ] )
+                
+                gulp.src( config.build.pathCorrection.assetPath.glob )
                     .pipe( plugin.replace(
-                        '/asset/', '/dist/asset/'
+                        config.build.pathCorrection.assetPath.search, 
+                        config.build.pathCorrection.assetPath.replace
+                        // if we are not serving from root
                         // '/asset/', ( config.component.build.root || '' ) + 'dist/asset/'
                     ) )
-                    .pipe( gulp.dest( config.dir.build + '/' ) )
+                    .pipe( gulp.dest( config.dir.build.root ) )
                 ;
             }
     	}

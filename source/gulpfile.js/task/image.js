@@ -5,14 +5,14 @@ module.exports = function (gulp, plugin, config) {
 
     return function () {
 
-        if ( config.component.build.production ) {
+        if ( config.build.production ) {
             return gulp.src( config.glob.image )
             	.pipe( plugin.imagemin( {
     		            progressive: true,
     		            svgoPlugins: [ {removeViewBox: false} ],
     		            use: [ plugin.pngquant() ]
     		        } ) )
-                .pipe( gulp.dest( config.dir.buildDist + '/asset/image' ) );
+                .pipe( gulp.dest( config.dir.build.image ) );
         } else {
             return true;
         }
