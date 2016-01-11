@@ -2,11 +2,12 @@
 
 module.exports = function( gulp, plugin ) {
     var userConfig;
-    console.log('Trying to load \'gulp.config.json\'...\nCreate a config file if you need to overwrite the \nsettings in gulpfile.js/config.defaults.json ');
     try {
-        userConfig = require('./config.defaults.json');
+        userConfig = require('../gulp.config.json');
+        console.log( 'Using settings from \'gulp.config.json\'.' );
     } catch (e) {
         userConfig = {};
+        console.log( 'NO \'gulp.config.json\' found.\nCreate a config file if you need to overwrite the settings in gulpfile.js/config.defaults.json');
     }
 
     var _config = plugin.extend( 
@@ -14,6 +15,8 @@ module.exports = function( gulp, plugin ) {
         require('./config.defaults.json'), 
         userConfig
     );
+
+    // console.log( _config );
 
     function getTask( name ) {
         return require('./task/' + name + '.js')( gulp, plugin, config );
@@ -24,10 +27,6 @@ module.exports = function( gulp, plugin ) {
         build: {
             production:           _config.build.production,
             pathCorrection: {
-                assetImage: {
-                    search:       _config.build.pathCorrection.assetImage.search,
-                    replace:      _config.build.pathCorrection.assetImage.replace
-                },
                 templatecache: {
                     prefix:       _config.build.pathCorrection.templatecache.prefix
                 },
@@ -35,6 +34,16 @@ module.exports = function( gulp, plugin ) {
                     glob:         _config.build.pathCorrection.assetPath.glob,
                     search:       _config.build.pathCorrection.assetPath.search,
                     replace:      _config.build.pathCorrection.assetPath.replace
+                },
+                assetPathProd: {
+                    glob:         _config.build.pathCorrection.assetPathProd.glob,
+                    search:       _config.build.pathCorrection.assetPathProd.search,
+                    replace:      _config.build.pathCorrection.assetPathProd.replace
+                },
+                cssPath: {
+                    glob:         _config.build.pathCorrection.cssPath.glob,
+                    search:       _config.build.pathCorrection.cssPath.search,
+                    replace:      _config.build.pathCorrection.cssPath.replace
                 }
             },
             templatecacheTmpFile: _config.build.templatecacheTmpFile
@@ -45,8 +54,6 @@ module.exports = function( gulp, plugin ) {
             tpm:                  _config.dir.tmp,
             css:                  _config.dir.css,
             data:                 _config.dir.data,
-            asset:                _config.dir.asset,
-            image:                _config.dir.image,
             fonts:                _config.dir.fonts,
             bower_components:     _config.dir.bower_components,
             build: {
