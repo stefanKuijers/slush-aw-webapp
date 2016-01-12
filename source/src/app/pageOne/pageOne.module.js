@@ -9,7 +9,9 @@
         .module(
             'aw.webapp.pageOne', 
             [
+            	'ui.router',
+            	'aw.webapp.commonService'
             ]
         );
-
-})();
+        
+} )();

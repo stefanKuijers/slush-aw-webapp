@@ -30,8 +30,6 @@
         "tmp": "./.tmp",
         "css": "./.tmp/css",
         "data": "./data",
-        "asset": "./app/asset",
-        "image": "./app/asset/image",
         "fonts": "./src/app/asset/fonts",
         "bower_components": "./bower_components",
         "build": {
@@ -81,7 +79,6 @@
             "!./src/app/**/*.spec.js",         
             "!./src/app/**/*.mock.js",         
             "./src/app/**/*.module.js",        
-            "./src/app/**/*.!(module).js",     
             "./src/app/**/*.js"                
         ] 
     },

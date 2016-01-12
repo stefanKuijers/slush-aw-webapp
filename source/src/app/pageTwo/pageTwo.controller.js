@@ -12,8 +12,15 @@
     /** @ngInject */
     function PageTwoController( CommonService ) {
         var vm = this;
-
-        console.log('pageTwo CTRL');
+        
         vm.reduce = CommonService.reduce;
+
+        vm.foo = function() {
+            vm.reduce();
+        };
+        
+        vm.return2 = function() {
+            return 2;
+        };
     }
 })();

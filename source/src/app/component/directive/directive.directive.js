@@ -15,18 +15,7 @@
             restrict: 'E',
             templateUrl: 'app/component/directive/directive.html',
             replace: true,
-            controller: 'DirectiveController as DirectiveCtrl',
-            compile: function() {
-                return {
-                    pre: function( scope, element ) {
-                        
-
-                    },
-                    post: function( scope, element ) {
-                        
-                    }
-                };
-            }
+            controller: 'DirectiveController as DirectiveCtrl'
         };
     }
 })();

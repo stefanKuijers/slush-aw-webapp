@@ -21,6 +21,7 @@ var plugin = {
     sync:              require('gulp-sync')(gulp),
     wiredep:           require('wiredep').stream,
     imagemin:          require('gulp-imagemin'),
+    notifier:          require('node-notifier'),
     plumber:           require('gulp-plumber'),
     cssnano:           require('gulp-cssnano'),
     replace:           require('gulp-replace'),
@@ -35,6 +36,7 @@ var plugin = {
     sass:              require('gulp-sass'),
     if:                require('gulp-if'),
     extend:            require('extend'),
+    karma:             require('karma'),
     path:              require('path'),
     del:               require('del')
 };
@@ -47,10 +49,11 @@ var config   = require('./config.js')( gulp, plugin );
 /* 
     Development
 */
-gulp.task( 'inject',  config.task.inject  );
-gulp.task( 'wiredep', config.task.wiredep );
-gulp.task( 'sass',    config.task.sass    );
-gulp.task( 'font',    config.task.font    );
+gulp.task( 'inject',        config.task.inject  );
+gulp.task( 'wiredep',       config.task.wiredep );
+gulp.task( 'sass',          config.task.sass    );
+gulp.task( 'font',          config.task.font    );
+gulp.task( 'test',          config.task.test    );
 
 gulp.task( 'serve', ['inject', 'sass'], config.task.serve );
 gulp.task( 

@@ -9,6 +9,7 @@
         .module(
             'aw.webapp.pageTwo', 
             [
+				'ui.router',
                 'aw.webapp.commonService'
             ]
         );

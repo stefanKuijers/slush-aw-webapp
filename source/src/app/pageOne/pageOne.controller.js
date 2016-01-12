@@ -13,8 +13,6 @@
     function PageOneController( CommonService ) {
         var vm = this;
 
-        console.log('pageOne CTRL');
-
         vm.add = CommonService.add;
     }
 })();

@@ -6,6 +6,7 @@
   "license": "ISC",
   "devDependencies": {
     "add-stream": "^1.0.0",
+    "angular-mocks": "^1.4.8",
     "browser-sync": "^2.9.12",
     "del": "^2.1.0",
     "extend": "^3.0.0",
@@ -28,8 +29,16 @@
     "gulp-useref": "^3.0.3",
     "gulp-watch": "^4.3.5",
     "imagemin-pngquant": "^4.2.0",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "~0.3.6",
+    "karma-ng-html2js-preprocessor": "~0.2.0",
+    "karma-phantomjs-launcher": "~0.2.1",
     "main-bower-files": "^2.11.0",
+    "node-notifier": "^4.4.0",
     "path": "^0.12.7",
+    "phantomjs": "~1.9.18",
     "wiredep": "^3.0.0-beta"
   }
 }

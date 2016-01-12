@@ -114,6 +114,7 @@ module.exports = function( gulp, plugin ) {
         inject: getTask('inject'),
         replace: getTask('replace'),
         sass: getTask('sass'),
+        test: getTask('test'),
         serve: getTask('serve'),
         serveBuild: getTask('serveBuild'),
         watch: getTask('watch'),
