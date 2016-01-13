@@ -18,11 +18,10 @@ module.exports = function (gulp, plugin, config) {
             .pipe( gulp.dest( config.destination.dir.templates ) );
 
         // copy source/src files
-        // gulp.src( [
-        //     config.source.path.package,
-        //     config.source.path.readme,
-        // ] )
-        //     .pipe( gulp.dest( config.destination.dir.templates ) );
+        gulp.src( [
+            config.source.path.karmaConfig
+        ] )
+            .pipe( gulp.dest( config.destination.dir.templates ) );
         
     };
 };

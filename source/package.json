@@ -6,7 +6,6 @@
   "license": "ISC",
   "devDependencies": {
     "add-stream": "^1.0.0",
-    "angular-mocks": "^1.4.8",
     "browser-sync": "^2.9.12",
     "del": "^2.1.0",
     "extend": "^3.0.0",

@@ -91,3 +91,6 @@ gulp.task(
         'serveBuild'
     ] ) 
 );
+
+
+gulp.task( 'serveCoverage',     config.task.serveCoverage );

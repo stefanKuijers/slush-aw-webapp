@@ -19,6 +19,7 @@ module.exports = function( gulp, plugins ) {
                 gitignore: './source/.gitignore',
                 bower: './source/bower.json',
                 readme: './source/README.md',
+                karmaConfig: './source/karma.conf.js',
             }
         },
         destination: {

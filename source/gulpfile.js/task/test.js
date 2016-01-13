@@ -12,7 +12,7 @@ module.exports = function (gulp, plugin, config) {
                 plugin.notifier.notify( {
                   title: 'Unit test failed',
                   message: failCount + ' test' + (failCount > 1 ? 's' : '') + ' failed while running karma.\nCheck the command line',
-                  sound: true // Only Notification Center or Windows Toasters
+                  sound: false // Only Notification Center or Windows Toasters
                 } );
             }
             done();
