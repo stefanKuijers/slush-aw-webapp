@@ -74,6 +74,7 @@ module.exports = function( gulp, plugin ) {
             bower:                _config.path.bower
         },
         glob: {
+            test:                 _config.glob.test,
             asset:                _config.glob.asset,
             image:                _config.glob.image,
             fonts:                _config.glob.fonts,

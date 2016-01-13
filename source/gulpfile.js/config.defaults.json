@@ -50,6 +50,7 @@
         "bower": "./bower.json"
     },
     "glob": {
+        "test": "./src/**/*.spec.js",
         "asset": [ 
             "./src/asset/**/*" 
         ],

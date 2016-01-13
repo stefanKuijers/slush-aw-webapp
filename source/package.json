@@ -9,6 +9,7 @@
     "browser-sync": "^2.9.12",
     "del": "^2.1.0",
     "extend": "^3.0.0",
+    "glob": "^6.0.4",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-concat": "^2.6.0",

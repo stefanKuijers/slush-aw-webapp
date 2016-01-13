@@ -37,6 +37,7 @@ var plugin = {
     if:                require('gulp-if'),
     extend:            require('extend'),
     karma:             require('karma'),
+    glob:              require('glob'),
     path:              require('path'),
     del:               require('del')
 };
