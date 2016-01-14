@@ -1,3 +1,4 @@
+/* global require, __dirname */
 'use strict';
 
 /*
@@ -12,6 +13,7 @@ plugin.path         = require('path');
 plugin.fs           = require('fs');
 plugin.del          = require('del');
 plugin.mkdirp       = require('mkdirp');
+plugin.glob         = require('glob');
 
 var config          = require('./config.js')( gulp, plugin )( __dirname );
 

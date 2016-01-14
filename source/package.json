@@ -29,6 +29,7 @@
     "gulp-useref": "^3.0.3",
     "gulp-watch": "^4.3.5",
     "imagemin-pngquant": "^4.2.0",
+    "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
     "karma-coverage": "^0.5.3",
