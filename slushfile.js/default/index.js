@@ -50,12 +50,12 @@ module.exports = function( gulp, plugin, config ) {
                 {
                     name: 'appName',
                     message: 'What is the name of the project?',
-                    default: config.defaults.appName
+                    default: 'aac-test'
                 },
                 {
                     name: 'mainComponentName',
                     message: 'What is the name of the main component?',
-                    default: 'aw.webapp'
+                    default: 'aac.test'
                 }
             ],
             parseAnswers
