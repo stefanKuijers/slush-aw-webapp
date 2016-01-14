@@ -1,7 +1,7 @@
 {
   "name": "slush-aw-webapp",
   "description": "Slush generator for webapps",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "homepage": "https://github.com/stefankuijers/slush-aw-webapp",
   "repository": {
     "type": "git",
