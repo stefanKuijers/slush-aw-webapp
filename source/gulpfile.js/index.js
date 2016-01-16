@@ -35,6 +35,7 @@ var plugin = {
     stream:            require('add-stream'),
     watch:             require('gulp-watch'),
     sass:              require('gulp-sass'),
+    doxx:              require('gulp-doxx'),
     if:                require('gulp-if'),
     extend:            require('extend'),
     karma:             require('karma'),
@@ -80,6 +81,7 @@ gulp.task( 'setupBuild',     ['image', 'html', 'copy'] );
 gulp.task( 'replace',        config.task.replace );
 gulp.task( 'cacheTemplate',  config.task.cacheTemplate );
 gulp.task( 'serveBuild',     config.task.serveBuild );
+gulp.task( 'createDocs',     config.task.createDocs );
 
 gulp.task( 
     'build', 

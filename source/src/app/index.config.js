@@ -14,7 +14,7 @@
             }
         )
     ;
-
+    
     /** @ngInject */
     function config() {
 
