@@ -22,20 +22,20 @@
 		vm.reduce = CommonService.reduce;
 
 		/**
-		 * Calling our own property indirectly
-		 */
+		 * Generates a person information string based on input.
+		 *
+		 * @param {string | {name: string, age: number | date}} name Name or person object
+		 * @param {{separator: string} =} options An options object
+		 * @return {string} The constructed information string
+		*/
 		vm.foo = function () {
 			vm.reduce();
 		};
 
 		/**
 		* Create an array of all the right files in the source dir
-		* @param {{value: Int}} options The value to return
-		* @param {{multiplication: Int}} options Multiplies the return
-		* @param 		{Object} params An object. Possble options:
-		*				````value:Int```` - the value to return
-		*               ````multiplecation:Int```` - multiplies the return value on return
-		*
+		* @param {{value: Int}} params The value to return
+		* @param {{multiplication: Int}} params Multiplies the return
 		* @return 		{Int}	returns a value which is an int.
 		*/
 		vm.return2 = function (params) {

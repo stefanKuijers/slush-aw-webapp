@@ -12,20 +12,27 @@ global angular
 
 Exposing the *reduce* function to the vm
 
-## foo()
+## foo(name, options)
 
-Calling our own property indirectly
+Generates a person information string based on input.
 
-## return2(options, options, params)
+### Params:
+
+* **string|[object Object]** *name* Name or person object
+* **[object Object]** *options* An options object
+
+### Return:
+
+* **string** The constructed information string
+
+## return2(params, params)
 
 Create an array of all the right files in the source dir
 
 ### Params:
 
-* **[object Object]** *options* The value to return
-* **[object Object]** *options* Multiplies the return
-* **Object** *params* An object. Possble options: 				````value:Int```` - the value to return
-              ````multiplecation:Int```` - multiplies the return value on return
+* **[object Object]** *params* The value to return
+* **[object Object]** *params* Multiplies the return
 
 ### Return:
 
