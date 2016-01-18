@@ -22,21 +22,17 @@
 		vm.reduce = CommonService.reduce;
 
 		/**
-		 * Generates a person information string based on input.
-		 *
-		 * @param {string | {name: string, age: number | date}} name - Name or person object
-		 * @param {{separator: string} =} options - An options object
-		 * @return {string} The constructed information string
-		*/
+		 * Holds a referrence to ````commonService.reduce````
+		 */
 		vm.foo = function () {
 			vm.reduce();
 		};
 
 		/**
-		 * Assign the project to an employee.
-		 * @param {Object} employee - The employee who is responsible for the project.
-		 * @param {string} employee.name - The name of the employee.
-		 * @param {string} employee.department - The employee's department.
+		 * Return 2 unless we pass in other params.
+		 * @param {Object} params - The params who is responsible for the project.
+		 * @param {int} params.value - The name of the params.
+		 * @param {int} params.multiplecation - some multiplecation.
 		 */
 		vm.return2 = function (params) {
 			var _params = {
