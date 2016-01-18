@@ -2,15 +2,16 @@
     Route: aw.webapp
 */
 
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('aw.webapp')
         .config(routerConfig);
 
-    /** @ngInject */
-    function routerConfig( $urlRouterProvider ) {
+    function routerConfig($urlRouterProvider) {
+ 	  	'ngInject';
+
         $urlRouterProvider.otherwise('/');
     }
 

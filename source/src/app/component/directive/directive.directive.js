@@ -9,8 +9,9 @@
         .module('aw.webapp.directive')
         .directive('directive', directive);
 
-    /** @ngInject */
     function directive() {
+        'ngInject';
+        
         return {
             restrict: 'E',
             templateUrl: 'app/component/directive/directive.html',

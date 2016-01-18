@@ -9,8 +9,9 @@
         .module('aw.webapp.pageOne')
         .config(routerConfig);
 
-    /** @ngInject */
     function routerConfig( $stateProvider ) {
+        'ngInject';
+        
         $stateProvider
             .state( 'pageOne', {
                 url: '/uno',

@@ -1,5 +1,5 @@
 {
     "build": {
-    	"production": false
+    	"production": true
     }
 }

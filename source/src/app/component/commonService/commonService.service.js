@@ -9,8 +9,9 @@
         .module( 'aw.webapp.commonService' )
         .service('CommonService',  CommonService);
 
-    /** @ngInject */
     function  CommonService() {
+        'ngInject';
+        
         var service = this;
         
         service.count = 0;

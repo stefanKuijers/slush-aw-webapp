@@ -9,8 +9,8 @@
         .module('aw.webapp.pageOne')
         .controller('PageOneController', PageOneController);
 
-    /** @ngInject */
     function PageOneController( CommonService ) {
+        'ngInject';
         var vm = this;
 
         vm.add = CommonService.add;

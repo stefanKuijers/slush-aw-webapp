@@ -9,8 +9,9 @@
         .module('aw.webapp.directive')
         .controller('DirectiveController', DirectiveController);
 
-    /** @ngInject */
     function DirectiveController( CommonService ) {
+        'ngInject';
+        
         var vm = this;
 
         vm.service = CommonService;

@@ -9,8 +9,9 @@
         .module('aw.webapp.pageTwo')
         .config(routerConfig);
 
-    /** @ngInject */
     function routerConfig( $stateProvider ) {
+        'ngInject';
+        
         $stateProvider
             .state( 'pageTwo', {
                 url: '/duo',
