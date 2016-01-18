@@ -118,6 +118,7 @@ module.exports = function( gulp, plugin ) {
         test: getTask('test'),
         serve: getTask('serve'),
         serveBuild: getTask('serveBuild'),
+        createDocs: getTask('createDocs'),
         serveCoverage: getTask('serveCoverage'),
         watch: getTask('watch'),
         wiredep: getTask('wiredep')

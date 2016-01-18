@@ -10,7 +10,7 @@ module.exports = function (gulp, plugin, config) {
             .pipe( plugin.plumber( { errorHandler: config.error.handler } ) )
             .pipe( plugin.sass() )
             .pipe( plugin.rename( { basename: 'vendor' } ) )
-            .pipe( plugin.sourcemaps.write() )
+            .pipe( plugin.sourcemaps.write('.') )
             .pipe( gulp.dest( config.dir.css ) )
             .pipe( plugin.browserSync.stream() );
 
@@ -23,10 +23,12 @@ module.exports = function (gulp, plugin, config) {
             .pipe( plugin.plumber( { errorHandler: config.error.handler } ) )
             // compile it to css and set some settings for error handling
             .pipe( plugin.sass() )
+            // prefixing css rules to support older browsers
+            .pipe( plugin.autoprefixer() )
             // rename the file to 'style'
             .pipe( plugin.rename( { basename: 'style' } ) )
             // write the sourcemap into the stream
-            .pipe( plugin.sourcemaps.write() )
+            .pipe( plugin.sourcemaps.write('.') )
             // write what you have in the following directory
             .pipe( gulp.dest( config.dir.css ) )
             // let browserSync stream this file content to all connected browsers

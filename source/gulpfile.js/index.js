@@ -15,6 +15,7 @@ var plugin = {
     browserSync:       require('browser-sync').create(),
     exec:              require('child_process').exec,
     pngquant:          require('imagemin-pngquant'),
+    autoprefixer:      require('gulp-autoprefixer'),
     mainBowerFiles:    require('main-bower-files'),
     annotate:          require('gulp-ng-annotate'),
     sourcemaps:        require('gulp-sourcemaps'),
@@ -25,6 +26,7 @@ var plugin = {
     plumber:           require('gulp-plumber'),
     cssnano:           require('gulp-cssnano'),
     replace:           require('gulp-replace'),
+    markdox:           require('gulp-markdox'),
     useref:            require('gulp-useref'),
     uglify:            require('gulp-uglify'),
     notify:            require('gulp-notify'),
@@ -79,6 +81,7 @@ gulp.task( 'setupBuild',     ['image', 'html', 'copy'] );
 gulp.task( 'replace',        config.task.replace );
 gulp.task( 'cacheTemplate',  config.task.cacheTemplate );
 gulp.task( 'serveBuild',     config.task.serveBuild );
+gulp.task( 'createDocs',     config.task.createDocs );
 
 gulp.task( 
     'build', 

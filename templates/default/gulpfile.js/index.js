@@ -15,6 +15,7 @@ var plugin = {
     browserSync:       require('browser-sync').create(),
     exec:              require('child_process').exec,
     pngquant:          require('imagemin-pngquant'),
+    autoprefixer:      require('gulp-autoprefixer'),
     mainBowerFiles:    require('main-bower-files'),
     annotate:          require('gulp-ng-annotate'),
     sourcemaps:        require('gulp-sourcemaps'),
