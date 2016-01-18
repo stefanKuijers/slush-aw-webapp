@@ -1,10 +1,8 @@
-
-
 <!-- Start src\app\pageTwo\pageTwo.controller.js -->
 
 global angular
 
-##Controller: aw.webapp.pageTwo
+## Controller: aw.webapp.pageTwo
 	Controller of the pageTwo component. Used to expose funtions
   of commonService.
 
@@ -27,4 +25,3 @@ Return 2 unless we pass in other params.
 * **int** *params.multiplecation* - some multiplecation.
 
 <!-- End src\app\pageTwo\pageTwo.controller.js -->
-
