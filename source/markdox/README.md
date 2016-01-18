@@ -12,28 +12,19 @@ global angular
 
 Exposing the *reduce* function to the vm
 
-## foo(name, options)
+## foo()
 
-Generates a person information string based on input.
+Holds a referrence to ````commonService.reduce````
 
-### Params:
+## return2(params, params.value, params.multiplecation)
 
-* **string|[object Object]** *name* - Name or person object
-* **[object Object]** *options* - An options object
-
-### Return:
-
-* **string** The constructed information string
-
-## return2(employee, employee.name, employee.department)
-
-Assign the project to an employee.
+Return 2 unless we pass in other params.
 
 ### Params:
 
-* **Object** *employee* - The employee who is responsible for the project.
-* **string** *employee.name* - The name of the employee.
-* **string** *employee.department* - The employee's department.
+* **Object** *params* - The params who is responsible for the project.
+* **int** *params.value* - The name of the params.
+* **int** *params.multiplecation* - some multiplecation.
 
 <!-- End src\app\pageTwo\pageTwo.controller.js -->
 
