@@ -24,8 +24,8 @@
 		/**
 		 * Generates a person information string based on input.
 		 *
-		 * @param {string | {name: string, age: number | date}} name Name or person object
-		 * @param {{separator: string} =} options An options object
+		 * @param {string | {name: string, age: number | date}} name - Name or person object
+		 * @param {{separator: string} =} options - An options object
 		 * @return {string} The constructed information string
 		*/
 		vm.foo = function () {
@@ -33,11 +33,11 @@
 		};
 
 		/**
-		* Create an array of all the right files in the source dir
-		* @param {{value: Int}} params The value to return
-		* @param {{multiplication: Int}} params Multiplies the return
-		* @return 		{Int}	returns a value which is an int.
-		*/
+		 * Assign the project to an employee.
+		 * @param {Object} employee - The employee who is responsible for the project.
+		 * @param {string} employee.name - The name of the employee.
+		 * @param {string} employee.department - The employee's department.
+		 */
 		vm.return2 = function (params) {
 			var _params = {
 				value: params.value || 2,
