@@ -13,9 +13,12 @@
     "*.sublime-workspace",
     "gulpfile.js",
     "package.json",
-    "src",
     ".editorconfig",
-    "gulp.config.json"
+    "gulp.config.json",
+    "karma.conf.js",
+    "coverage",
+    "src",
+    "!build/src"
   ],
   "dependencies": {
     "angular": "~1.4.8"
