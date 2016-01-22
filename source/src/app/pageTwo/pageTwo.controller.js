@@ -1,8 +1,7 @@
 /* global angular */
 /**
-*	##Controller: aw.webapp.pageTwo
-*	Controller of the pageTwo component. Used to expose funtions
-*   of commonService.
+*	## Controller: aw.webapp.pageTwo
+*	Controller of the pageTwo component. Used to expose funtions of commonService.
 */
 
 (function () {

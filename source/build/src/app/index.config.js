@@ -1,13 +1,13 @@
 /* global angular */
 /*
-   Config: <%= mainComponentName %>
+   Config: aw.webapp
 */
 
 (function () {
 	'use strict';
 
 	angular
-		.module('<%= mainComponentName %>')
+		.module('aw.webapp')
 		.config(config)
 		.constant(
 			'CONSTANT_KEY', {}

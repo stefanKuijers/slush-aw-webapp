@@ -7,4 +7,4 @@ bower_components
 *.sublime-project
 *.sublime-workspace
 npm-debug.log
-build/
+coverage/
